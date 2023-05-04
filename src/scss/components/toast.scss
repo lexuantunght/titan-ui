@@ -1,0 +1,14 @@
+.t-toast {
+	position: fixed;
+	top: 50vh;
+	left: 50vw;
+	background-color: rgba(0, 0, 0, 0);
+	color: #ffffff;
+	z-index: 5;
+	border-radius: var(--border-radius);
+	padding: var(--padding-y) var(--padding-x);
+	transform: translate(-50%, -50%);
+	&.show {
+		background-color: var(--neutral-800);
+	}
+}
