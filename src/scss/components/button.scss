@@ -5,6 +5,9 @@
 	background-color: transparent;
 	padding: 0;
 	transition: all var(--transition-time);
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	&.sm {
 		font-size: 0.875rem;
 	}
@@ -62,6 +65,12 @@
 			background-color: var(--light);
 			&:hover:not(:disabled) {
 				background-color: var(--light-hover);
+			}
+		}
+		&.opacity {
+			background-color: var(--opacity);
+			&:hover:not(:disabled) {
+				background-color: var(--opacity-hover);
 			}
 		}
 	}
@@ -173,5 +182,12 @@
 		&:hover:not(:disabled) {
 			text-decoration: underline;
 		}
+	}
+	&.fill.circle,
+	&.outline.circle {
+		height: unset;
+		width: max-content;
+		aspect-ratio: 1/1;
+		border-radius: 50%;
 	}
 }

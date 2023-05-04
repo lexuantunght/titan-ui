@@ -12,7 +12,7 @@ const DemoButton = () => {
 				<Button mode="text" varriant="warning">
 					Hello World
 				</Button>
-				<Button mode="outline" varriant="secondary">
+				<Button loading mode="outline" varriant="secondary">
 					Hello World
 				</Button>
 				<Button loading size="sm" mode="fill" varriant="error">
@@ -20,6 +20,9 @@ const DemoButton = () => {
 				</Button>
 				<Button mode="fill" varriant="light">
 					Hello World
+				</Button>
+				<Button mode="fill" varriant="opacity" shape="circle">
+					Hello
 				</Button>
 			</div>
 		</>
