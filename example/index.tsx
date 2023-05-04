@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import '../src/dist/main.css';
-import '../src/dist/icon.css';
+import '../src/scss/index.scss';
 import './index.scss';
 import DemoColorTable from './color-table';
 import DemoButton from './button';

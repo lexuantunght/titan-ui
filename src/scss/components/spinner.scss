@@ -1,16 +1,16 @@
 .t-spinner {
 	display: inline-block;
 	position: relative;
-	width: 20px;
-	height: 20px;
+	width: 18px;
+	height: 18px;
 	&.md {
-		width: 1.5rem;
-		height: 1.5rem;
-		min-width: 1.5rem;
-		min-height: 1.5rem;
+		width: 1.25rem;
+		height: 1.25rem;
+		min-width: 1.25rem;
+		min-height: 1.25rem;
 		& div {
-			width: calc(1.5rem - 4px);
-			height: calc(1.5rem - 4px);
+			width: calc(1.25rem - 4px);
+			height: calc(1.25rem - 4px);
 		}
 	}
 	&.lg {
@@ -23,43 +23,21 @@
 			width: calc(2rem - 4px);
 		}
 	}
-	&.primary {
-		& div {
-			border-color: var(--primary) transparent transparent transparent;
-		}
-	}
-	&.secondary {
-		& div {
-			border-color: var(--secondary) transparent transparent transparent;
-		}
-	}
-	&.error {
-		& div {
-			border-color: var(--error) transparent transparent transparent;
-		}
-	}
-	&.warning {
-		& div {
-			border-color: var(--warning) transparent transparent transparent;
-		}
-	}
-	&.light {
-		& div {
-			border-color: var(--light) transparent transparent transparent;
-		}
-	}
 }
 .t-spinner div {
 	box-sizing: border-box;
 	display: block;
 	position: absolute;
-	width: 16px;
-	height: 16px;
+	width: 14px;
+	height: 14px;
 	margin: 2px;
 	border: 2px solid;
 	border-radius: 50%;
 	animation: loader-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-	border-color: #fff transparent transparent transparent;
+	border-top-color: unset;
+	border-bottom-color: transparent;
+	border-left-color: transparent;
+	border-right-color: transparent;
 }
 .t-spinner div:nth-child(1) {
 	animation-delay: -0.45s;

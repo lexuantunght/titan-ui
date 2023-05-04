@@ -24,7 +24,7 @@ export class Button extends React.PureComponent<ButtonProps> {
 		return (
 			<button className={clsx('t-button', mode, varriant, size, className)} {...others}>
 				{loading ? (
-					<Spinner size={size} varriant={varriant} />
+					<Spinner className="t-button-inner-icon" size={size} />
 				) : typeof icon === 'string' ? (
 					<i className={icon} />
 				) : (

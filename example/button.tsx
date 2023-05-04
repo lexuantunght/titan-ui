@@ -15,7 +15,7 @@ const DemoButton = () => {
 				<Button mode="outline" varriant="secondary">
 					Hello World
 				</Button>
-				<Button icon="icon-add-outline" mode="fill" varriant="error">
+				<Button loading size="sm" mode="fill" varriant="error">
 					Hello World
 				</Button>
 				<Button mode="fill" varriant="light">
