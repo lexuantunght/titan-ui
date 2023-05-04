@@ -19,7 +19,7 @@ if (isDev) {
 }
 
 module.exports = {
-	entry: './src/index.tsx',
+	entry: './example/index.tsx',
 	output: {
 		path: path.join(__dirname, 'dist'),
 		filename: '[name].[contenthash].js',

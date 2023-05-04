@@ -1,25 +1,29 @@
 {
-	"compilerOptions": {
-		"target": "ESNext",
-		"useDefineForClassFields": true,
-		"lib": ["DOM", "DOM.Iterable", "ESNext"],
-		"allowJs": false,
-		"skipLibCheck": true,
-		"esModuleInterop": false,
-		"allowSyntheticDefaultImports": true,
-		"strict": true,
-		"forceConsistentCasingInFileNames": false,
-		"module": "ESNext",
-		"moduleResolution": "Node",
-		"resolveJsonModule": true,
-		"isolatedModules": true,
-		"noEmit": true,
+    "compilerOptions": {
+        "target": "ES5",
+        "lib": ["dom", "dom.iterable", "esnext"],
+        "allowJs": true,
+        "checkJs": false,
+        "rootDirs": ["src", "example"],
+        "skipLibCheck": true,
+        "strict": true,
+        "forceConsistentCasingInFileNames": true,
+        "noEmit": false,
 		"jsx": "react-jsx",
-		"baseUrl": ".",
-		"paths": {
-			"*": ["src/*"]
-		}
-	},
-	"include": ["src"],
-	"exclude": ["node_modules", "**/node_modules/*", "./build/*", "./dist/*", "./cmd/*"]
+        "esModuleInterop": true,
+        "module": "esnext",
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "incremental": true,
+        "outDir": "./lib",
+        "declaration": true,
+        "plugins": [{ "transform": "typescript-transform-paths" }],
+        "baseUrl": ".",
+        "paths": {
+            "*": ["src/*"]
+        },
+    },
+    "include": ["src/**/*.ts", "src/**/*.tsx"],
+    "exclude": ["node_modules", "**/node_modules/*", "./build/*", "./dist/*"]
 }

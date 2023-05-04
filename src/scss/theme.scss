@@ -1,0 +1,18 @@
+:root {
+	--primary: var(--green-500);
+	--primary-hover: var(--green-400);
+	--secondary: var(--neutral-300);
+	--secondary-hover: var(--neutral-200);
+	--error: var(--red-600);
+	--error-hover: var(--red-500);
+	--warning: var(--yellow-500);
+	--warning-hover: var(--yellow-400);
+	--light: var(--slate-100);
+	--light-hover: var(--slate-50);
+
+	--border-radius: 8px;
+	--padding-x: 0.7rem;
+	--padding-y: 0.4rem;
+	--transition-time: 0.3s;
+	--box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}

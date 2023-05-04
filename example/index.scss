@@ -1,0 +1,17 @@
+.demo-content {
+	padding: 1rem;
+}
+.demo-colors-table {
+	border-collapse: collapse;
+	td,
+	th {
+		border: 1px solid #dddddd;
+		text-align: left;
+		padding: 8px;
+	}
+}
+.demo-btn-grid {
+	display: grid;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	gap: 2rem;
+}
