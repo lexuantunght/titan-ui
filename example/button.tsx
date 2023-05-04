@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from '../src/index';
+import { Button, Tooltip } from '../src/index';
 
 const DemoButton = () => {
 	return (
@@ -18,9 +18,11 @@ const DemoButton = () => {
 				<Button loading size="sm" mode="fill" varriant="error">
 					Hello World
 				</Button>
-				<Button mode="fill" varriant="light">
-					Hello World
-				</Button>
+				<Tooltip content="Hello world!">
+					<Button mode="fill" varriant="light">
+						Hello World
+					</Button>
+				</Tooltip>
 				<Button mode="fill" varriant="opacity" shape="circle">
 					Hello
 				</Button>

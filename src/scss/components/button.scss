@@ -9,7 +9,7 @@
 	align-items: center;
 	justify-content: center;
 	&.sm {
-		font-size: 0.875rem;
+		font-size: 0.75rem;
 	}
 	&.md {
 		font-size: 1rem;
@@ -29,13 +29,13 @@
 		border-radius: var(--border-radius);
 		padding: 0 var(--padding-x);
 		&.sm {
-			height: 28px;
+			height: 24px;
 		}
 		&.md {
-			height: 36px;
+			height: 32px;
 		}
 		&.xl {
-			height: 44px;
+			height: 40px;
 		}
 		&.primary {
 			background-color: var(--primary);
@@ -113,13 +113,13 @@
 		border-radius: var(--border-radius);
 		padding: 0 var(--padding-x);
 		&.sm {
-			height: 28px;
+			height: 24px;
 		}
 		&.md {
-			height: 36px;
+			height: 32px;
 		}
 		&.xl {
-			height: 44px;
+			height: 40px;
 		}
 		&.primary {
 			border-color: var(--primary);
