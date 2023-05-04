@@ -28,3 +28,4 @@ music.manifest.json
 
 *.lang.json
 dist-icon
+lib
