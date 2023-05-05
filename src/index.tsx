@@ -6,3 +6,4 @@ export { Switch } from 'components/switch';
 export { VStack } from 'components/vstack';
 export { HStack } from 'components/hstack';
 export { MemorizedCheckbox as Checkbox } from 'components/check-box';
+export { Dropdown } from 'components/dropdown';
