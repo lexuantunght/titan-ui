@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import '../src/scss/index.scss';
+import '../src/scss/theme.scss';
+import '../src/dist/icon.css';
 import './index.scss';
 import DemoButton from './button';
 

@@ -9,10 +9,11 @@
 	],
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"sass": "sass --no-source-map src/scss/index.scss:src/dist/main.css",
+		"icon": "gulp -f gulpfile.js iconfont",
+		"sass": "sass --no-source-map src/scss/index.scss:src/dist/main.css src/scss/theme.scss:src/dist/theme.css",
 		"dev": "cross-env NODE_ENV=development webpack-dev-server",
 		"build": "cross-env NODE_ENV=production npm run lang && webpack",
-		"build:lib": "cross-env NODE_ENV=production npm run sass && ttsc && copyfiles -u 1 ./src/dist/**/* ./lib",
+		"build:lib": "cross-env NODE_ENV=production npm run sass && npm run icon && ttsc && copyfiles -u 1 ./src/dist/**/* ./lib",
 		"prepare": "npm run build:lib",
 		"lint": "eslint ."
 	},
@@ -47,6 +48,9 @@
 		"eslint": "^8.36.0",
 		"eslint-plugin-react": "^7.32.2",
 		"file-loader": "^6.2.0",
+		"gulp": "4.0.2",
+		"gulp-consolidate": "0.2.0",
+		"gulp-iconfont": "11.0.0",
 		"html-webpack-plugin": "^5.5.1",
 		"mini-css-extract-plugin": "^2.7.5",
 		"sass": "^1.59.3",
