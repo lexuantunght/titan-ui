@@ -23,9 +23,6 @@ const DemoButton = () => {
 						Hello World
 					</Button>
 				</Tooltip>
-				<Button mode="fill" varriant="opacity" shape="circle">
-					Hello
-				</Button>
 			</div>
 		</>
 	);

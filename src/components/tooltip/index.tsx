@@ -87,7 +87,7 @@ const TooltipContent = (
 };
 
 function Tooltip(props: TooltipProps) {
-	const { hide, showOnElementDisabled = true, wrapperClassName } = props;
+	const { hide, showOnElementDisabled = false, wrapperClassName } = props;
 	const childRef = React.useRef<Element>(null);
 	const [show, setShow] = React.useState(false);
 	const childComponent = React.cloneElement(

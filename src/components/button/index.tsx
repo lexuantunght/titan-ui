@@ -1,6 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
 import { Spinner } from 'components/spinner';
+import withForwardRef from 'utils/hocs/with-forward-ref';
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 	varriant?: 'primary' | 'light' | 'error' | 'warning' | 'secondary' | 'opacity';
@@ -9,9 +10,10 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
 	size?: 'sm' | 'md' | 'lg';
 	icon?: React.ReactNode;
 	loading?: boolean;
+	innerRef?: React.LegacyRef<HTMLButtonElement>;
 }
 
-export class Button extends React.PureComponent<ButtonProps> {
+class Button extends React.PureComponent<ButtonProps> {
 	render() {
 		const {
 			className,
@@ -21,16 +23,18 @@ export class Button extends React.PureComponent<ButtonProps> {
 			loading,
 			size = 'md',
 			shape = 'rectangle',
+			innerRef,
 			...others
 		} = this.props;
 		return (
 			<button
 				className={clsx('t-button', mode, varriant, size, shape, className)}
-				{...others}>
+				{...others}
+				ref={innerRef}>
 				{loading ? (
 					<Spinner className="t-button-inner-icon" size={size} />
 				) : typeof icon === 'string' ? (
-					<i className={icon} />
+					<i className={clsx('t-button-icon t-icon', icon)} />
 				) : (
 					icon
 				)}
@@ -39,3 +43,5 @@ export class Button extends React.PureComponent<ButtonProps> {
 		);
 	}
 }
+
+export default withForwardRef(Button);
