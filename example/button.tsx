@@ -1,7 +1,8 @@
 import React from 'react';
-import { Button, Tooltip } from '../src/index';
+import { Button, PopupMenu, Tooltip } from '../src/index';
 
 const DemoButton = () => {
+	const ref = React.useRef<any>(null);
 	return (
 		<>
 			<h3>Button modes & varriables</h3>
@@ -19,7 +20,7 @@ const DemoButton = () => {
 					Hello World
 				</Button>
 				<Tooltip content="Hello world!">
-					<Button mode="fill" varriant="light">
+					<Button onClick={(e) => ref.current.toggle(e)} mode="fill" varriant="light">
 						Hello World
 					</Button>
 				</Tooltip>
@@ -27,6 +28,7 @@ const DemoButton = () => {
 					Hello
 				</Button>
 			</div>
+			<PopupMenu ref={ref} items={[{ element: 'Hello' }, { element: 'hahaha' }]} />
 		</>
 	);
 };
