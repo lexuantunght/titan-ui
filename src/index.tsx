@@ -1,4 +1,4 @@
-export { Button } from 'components/button';
+export { default as Button } from 'components/button';
 export { Spinner } from 'components/spinner';
 export { MemorizedTooltip as Tooltip } from 'components/tooltip';
 export { MemorizedToast as Toast } from 'components/toast';
@@ -8,3 +8,4 @@ export { HStack } from 'components/hstack';
 export { MemorizedCheckbox as Checkbox } from 'components/check-box';
 export { Dropdown } from 'components/dropdown';
 export { MemorizedPopupMenu as PopupMenu } from 'components/popup-menu';
+export { Modal } from 'components/modal';

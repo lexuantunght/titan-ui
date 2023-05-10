@@ -12,9 +12,15 @@
 	--opacity: #6c727550;
 	--opacity-hover: #2f313180;
 
+	--text-color: var(--neutral-800);
+
 	--border-radius: 8px;
 	--padding-x: 0.7rem;
 	--padding-y: 0.4rem;
 	--transition-time: 0.3s;
 	--box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme='dark'] {
+	--text-color: var(--neutral-50);
 }
