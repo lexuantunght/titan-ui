@@ -12,7 +12,7 @@ const DemoUI = () => {
 		<div className="demo-content">
 			<h1>Demo UI Component</h1>
 			<DemoButton />
-			<Modal show={true}>
+			<Modal show={false}>
 				<div style={{ height: 200 }}>haha</div>
 			</Modal>
 		</div>

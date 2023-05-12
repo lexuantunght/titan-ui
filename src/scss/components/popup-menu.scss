@@ -9,6 +9,11 @@
 	padding-bottom: var(--padding-y);
 	border-radius: var(--border-radius);
 	border: 1px solid var(--neutral-300);
+	opacity: 0;
+
+	&.show {
+		opacity: 1;
+	}
 
 	&-divider {
 		min-height: 1px;
@@ -36,12 +41,5 @@
 		&:hover &-sub {
 			display: flex;
 		}
-	}
-	&-sub {
-		display: none;
-		position: absolute;
-		top: 0;
-		flex-direction: column;
-		box-shadow: var(--box-shadow);
 	}
 }
