@@ -11,3 +11,4 @@ export { MemorizedPopupMenu as PopupMenu } from 'components/popup-menu';
 export { Modal } from 'components/modal';
 export { default as VirtualizedList } from 'components/virtualized-list';
 export { default as TextInput } from 'components/text-input';
+export { default as Avatar } from 'components/avatar';

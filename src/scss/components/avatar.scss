@@ -1,0 +1,46 @@
+.t-avatar {
+	object-fit: cover;
+	aspect-ratio: 1/1;
+	&.sm {
+		width: 2rem;
+	}
+	&.md {
+		width: 3rem;
+	}
+	&.lg {
+		width: 4rem;
+	}
+	&.circle {
+		border-radius: 50%;
+	}
+	&.rounded-square {
+		border-radius: var(--border-radius);
+	}
+	&.outline {
+		border: 1px solid;
+		&.primary {
+			border-color: var(--primary);
+		}
+		&.secondary {
+			border-color: var(--secondary);
+		}
+		&.error {
+			border-color: var(--error);
+		}
+		&.warning {
+			border-color: var(--warning);
+		}
+		&.light {
+			border-color: var(--light);
+		}
+		&.opacity {
+			border-color: var(--opacity);
+		}
+	}
+	&-error {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: var(--secondary);
+	}
+}
