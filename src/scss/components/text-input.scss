@@ -1,0 +1,66 @@
+.t-text-input {
+	outline: none;
+	background-color: transparent;
+	border: none;
+	padding: 0;
+	font-size: 1rem;
+	min-width: 10rem;
+
+	&.outline,
+	&-wrapper {
+		padding: var(--padding-y) var(--padding-x);
+		border: 1px solid;
+		border-radius: var(--border-radius);
+	}
+
+	&-wrapper {
+		display: flex;
+		align-items: center;
+		width: fit-content;
+	}
+
+	&.outline,
+	&-wrapper {
+		&.primary {
+			border-color: var(--primary);
+			&:hover:not(:disabled) {
+				border-color: var(--primary-hover);
+			}
+		}
+		&.secondary {
+			border-color: var(--secondary);
+			&:hover:not(:disabled) {
+				border-color: var(--secondary-hover);
+			}
+		}
+		&.error {
+			border-color: var(--error);
+			&:hover:not(:disabled) {
+				border-color: var(--error-hover);
+			}
+		}
+		&.warning {
+			border-color: var(--warning);
+			&:hover:not(:disabled) {
+				border-color: var(--warning-hover);
+			}
+		}
+		&.light {
+			border-color: var(--light);
+			&:hover:not(:disabled) {
+				border-color: var(--light-hover);
+			}
+		}
+		&.opacity {
+			border-color: var(--opacity);
+			&:hover:not(:disabled) {
+				border-color: var(--opacity-hover);
+			}
+		}
+	}
+
+	&-icon {
+		margin-right: 0.25rem;
+		font-size: 1.125rem;
+	}
+}

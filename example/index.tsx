@@ -5,7 +5,7 @@ import '../src/scss/theme.scss';
 import '../src/dist/icon.css';
 import './index.scss';
 import DemoButton from './button';
-import { Modal } from '../src';
+import { Modal, TextInput } from '../src';
 
 const DemoUI = () => {
 	return (
@@ -15,6 +15,7 @@ const DemoUI = () => {
 			<Modal show={false}>
 				<div style={{ height: 200 }}>haha</div>
 			</Modal>
+			<TextInput errorText="Failed name" icon="icon-check" />
 		</div>
 	);
 };
