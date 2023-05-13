@@ -1,0 +1,35 @@
+.t-tab-container {
+	display: flex;
+	flex-direction: column;
+}
+.t-tab-header {
+	display: flex;
+	position: relative;
+	border-bottom: 1px solid var(--neutral-300);
+	[data-theme='dark'] & {
+		border-color: var(--neutral-100);
+	}
+	&-title {
+		cursor: pointer;
+		font-weight: 500;
+		transition: color 0.15s;
+		padding-bottom: 0.5rem;
+		&.focused,
+		&:hover {
+			color: var(--primary);
+		}
+		&:not(:last-child) {
+			margin-right: 0.75rem;
+		}
+	}
+}
+
+.t-tab-indicator {
+	position: absolute;
+	height: 2px;
+	width: 0;
+	bottom: 0;
+	left: 0;
+	background-color: var(--primary);
+	transition: all var(--transition-time);
+}

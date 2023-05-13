@@ -14,3 +14,4 @@ export { default as TextInput } from 'components/text-input';
 export { default as Avatar } from 'components/avatar';
 export { default as ScrollBox } from 'components/scroll-box';
 export { default as Slider } from 'components/slider';
+export { default as Tab } from 'components/tab';
