@@ -13,11 +13,6 @@
 		border-radius: var(--border-radius);
 	}
 
-	&.fill {
-		background-color: var(--light);
-		color: var(--neutral-800);
-	}
-
 	&-wrapper {
 		display: flex;
 		align-items: center;
@@ -64,7 +59,10 @@
 		}
 		&.fill {
 			background-color: var(--light);
-			color: var(--neutral-800);
+			.t-text-input-icon,
+			.t-text-input {
+				color: var(--neutral-800);
+			}
 		}
 	}
 
