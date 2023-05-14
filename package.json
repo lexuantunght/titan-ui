@@ -1,6 +1,6 @@
 {
 	"name": "react-titan",
-	"version": "1.0.5",
+	"version": "1.0.6",
 	"description": "A Lightly React UI Component Library",
 	"main": "lib/index.js",
 	"types": "lib/index.d.ts",
@@ -13,7 +13,7 @@
 		"sass": "sass --no-source-map src/scss/index.scss:src/dist/main.css src/scss/theme.scss:src/dist/theme.css",
 		"dev": "cross-env NODE_ENV=development webpack-dev-server",
 		"build": "cross-env NODE_ENV=production npm run lang && webpack",
-		"build:lib": "cross-env NODE_ENV=production npm run sass && npm run icon && ttsc && copyfiles -u 1 ./src/dist/**/* ./lib",
+		"build:lib": "cross-env NODE_ENV=production npm run sass && npm run icon && rimraf ./lib && ttsc && copyfiles -u 1 ./src/dist/**/* ./lib",
 		"prepare": "npm run build:lib",
 		"lint": "eslint ."
 	},
@@ -53,6 +53,7 @@
 		"gulp-iconfont": "11.0.0",
 		"html-webpack-plugin": "^5.5.1",
 		"mini-css-extract-plugin": "^2.7.5",
+		"rimraf": "4.4.0",
 		"sass": "^1.59.3",
 		"sass-loader": "^13.2.2",
 		"style-loader": "^3.3.2",
@@ -71,14 +72,6 @@
 		"clsx": "^1.2.1",
 		"rc-virtual-list": "^3.4.13",
 		"react": "17.0.2",
-		"react-custom-scrollbars": "^4.2.1",
-		"react-dom": "17.0.2",
-		"react-transition-group": "^4.4.5"
-	},
-	"peerDependencies": {
-		"react": ">=17.0.2",
-		"clsx": "^1.2.1",
-		"rc-virtual-list": "^3.4.13",
 		"react-custom-scrollbars": "^4.2.1",
 		"react-dom": "17.0.2",
 		"react-transition-group": "^4.4.5"

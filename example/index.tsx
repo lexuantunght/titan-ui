@@ -5,7 +5,7 @@ import '../src/scss/theme.scss';
 import '../src/dist/icon.css';
 import './index.scss';
 import DemoButton from './button';
-import { Avatar, Modal, Slider, Tab, TextInput } from '../src';
+import { Avatar, Modal, Slider, Tab, TextInput } from '../lib';
 
 const DemoUI = () => {
 	return (
