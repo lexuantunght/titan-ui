@@ -34,6 +34,7 @@ export type PopupMenuItem = {
 	leftIcon?: JSX.Element;
 	className?: string;
 	items?: PopupMenuItem[];
+	popupClassName?: string;
 };
 
 export type PopupMenuProps = PopupProps & {
