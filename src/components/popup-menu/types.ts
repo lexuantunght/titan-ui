@@ -32,6 +32,7 @@ export type PopupMenuItem = {
 	disabled?: boolean;
 	divider?: 'top' | 'bottom' | 'none';
 	leftIcon?: JSX.Element;
+	className?: string;
 	items?: PopupMenuItem[];
 };
 
