@@ -3,12 +3,14 @@
 	right: 0;
 	top: 0;
 	width: max-content;
-	background-color: var(--light);
+	background-color: var(--neutral-50);
+	[data-theme='dark'] & {
+		background-color: var(--neutral-800);
+	}
 	box-shadow: var(--box-shadow);
 	padding-top: var(--padding-y);
 	padding-bottom: var(--padding-y);
 	border-radius: var(--border-radius);
-	border: 1px solid var(--neutral-300);
 	opacity: 0;
 
 	&.show {

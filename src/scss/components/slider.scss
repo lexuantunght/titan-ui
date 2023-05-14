@@ -9,8 +9,7 @@
 		opacity: 0.5;
 	}
 
-	&.auto-hide:hover:not(.disabled),
-	&:not(.auto-hide) {
+	&.show {
 		.t-slider-control {
 			background-color: var(--primary);
 		}

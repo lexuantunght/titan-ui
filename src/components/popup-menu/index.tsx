@@ -4,6 +4,15 @@ import { PopupMenu as Popup } from './popup';
 import { PopupMenuProps, PopupMenuItem } from './types';
 import ItemPopupRenderer from './item-popup-renderer';
 
+const renderItemFn = (items: PopupMenuItem[]) => {
+	if (!items?.length) {
+		return null;
+	}
+	return items.map((item, key) => (
+		<ItemPopupRenderer key={key} item={item} renderItemFn={renderItemFn} />
+	));
+};
+
 export class PopupMenu extends React.PureComponent<PopupMenuProps> {
 	private popupRef;
 	constructor(props: PopupMenuProps) {
@@ -15,20 +24,23 @@ export class PopupMenu extends React.PureComponent<PopupMenuProps> {
 		this.popupRef.current?.toggle(e);
 	}
 
-	renderItemFn(items: PopupMenuItem[]) {
-		return items.map((item, key) => (
-			<ItemPopupRenderer key={key} item={item} renderItemFn={this.renderItemFn} />
-		));
+	close() {
+		this.popupRef.current?.handleClose();
 	}
 
 	render() {
-		const { items, onHide, className } = this.props;
+		const { items = [], onHide, className, children } = this.props;
 		return (
 			<Popup
 				className={clsx('t-popup-menu-container', className)}
 				onHide={onHide}
+				onShow={this.props.onShow}
+				centerHorizontal={this.props.centerHorizontal}
+				centerVertical={this.props.centerVertical}
+				keepShowOnClick={this.props.keepShowOnClick}
+				offset={this.props.offset}
 				ref={this.popupRef}>
-				{this.renderItemFn(items)}
+				{children ? children : renderItemFn(items)}
 			</Popup>
 		);
 	}
