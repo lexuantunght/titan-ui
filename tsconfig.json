@@ -19,7 +19,7 @@
         "outDir": "./lib",
         "declaration": true,
         "plugins": [
-            { "transform": "typescript-transform-paths", "exclude": [ "**/node_modules/**" ]},
+            { "transform": "typescript-transform-paths", "exclude": ["**/node_modules/**"] },
         ],
         "baseUrl": ".",
         "paths": {
