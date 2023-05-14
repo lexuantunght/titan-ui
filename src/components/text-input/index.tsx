@@ -8,6 +8,7 @@ export interface TextInputProps extends React.InputHTMLAttributes<HTMLInputEleme
 	varriant?: 'primary' | 'light' | 'error' | 'warning' | 'secondary' | 'opacity';
 	icon?: React.ReactNode;
 	innerRef?: React.LegacyRef<HTMLInputElement>;
+	wrapperClassName?: string;
 }
 
 class TextInput extends React.PureComponent<TextInputProps> {
@@ -18,6 +19,7 @@ class TextInput extends React.PureComponent<TextInputProps> {
 			varriant = 'secondary',
 			icon,
 			innerRef,
+			wrapperClassName,
 			...others
 		} = this.props;
 
@@ -28,7 +30,8 @@ class TextInput extends React.PureComponent<TextInputProps> {
 						't-text-input-wrapper',
 						this.props.disabled && 'disabled',
 						mode === 'fill' && 'fill',
-						varriant
+						varriant,
+						wrapperClassName
 					)}>
 					{typeof icon === 'string' ? (
 						<i className={clsx('t-text-input-icon t-icon', icon)} />

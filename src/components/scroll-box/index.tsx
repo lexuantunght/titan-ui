@@ -7,6 +7,7 @@ export type ScrollBoxProps = {
 	autoHide?: boolean;
 	className?: string;
 	style?: React.CSSProperties;
+	children?: React.ReactNode;
 };
 
 const ScrollBox = (props: ScrollBoxProps) => {
@@ -31,8 +32,9 @@ const ScrollBox = (props: ScrollBoxProps) => {
 						borderRadius: 3,
 					}}
 				/>
-			)}
-		/>
+			)}>
+			{props.children}
+		</Scrollbars>
 	);
 };
 
