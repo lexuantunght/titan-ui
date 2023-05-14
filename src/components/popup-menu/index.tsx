@@ -11,7 +11,7 @@ export class PopupMenu extends React.PureComponent<PopupMenuProps> {
 		this.popupRef = React.createRef<Popup>();
 	}
 
-	toggle(e: React.MouseEvent<HTMLDivElement, MouseEvent>) {
+	toggle(e: React.MouseEvent<HTMLElement, MouseEvent>) {
 		this.popupRef.current?.toggle(e);
 	}
 
