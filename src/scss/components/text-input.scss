@@ -16,7 +16,6 @@
 	&-wrapper {
 		display: flex;
 		align-items: center;
-		width: fit-content;
 	}
 
 	&.outline,
@@ -63,6 +62,9 @@
 			.t-text-input {
 				color: var(--neutral-800);
 			}
+		}
+		.t-text-input {
+			flex-grow: 1;
 		}
 	}
 
