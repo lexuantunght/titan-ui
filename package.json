@@ -1,6 +1,6 @@
 {
 	"name": "react-titan",
-	"version": "1.1.0",
+	"version": "1.1.1",
 	"description": "A Lightly React UI Component Library",
 	"main": "lib/index.js",
 	"types": "lib/index.d.ts",
