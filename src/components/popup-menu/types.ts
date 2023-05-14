@@ -41,10 +41,6 @@ export type PopupMenuProps = {
 	className?: string;
 };
 
-export type PopupContextMenuRef = {
-	toggle: (e: React.MouseEvent<HTMLElement, MouseEvent>) => void;
-};
-
 export type PopupPosition = {
 	top: number;
 	left: number;

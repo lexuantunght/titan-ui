@@ -7,7 +7,7 @@ export { VStack } from './components/vstack';
 export { HStack } from './components/hstack';
 export { MemorizedCheckbox as Checkbox } from './components/check-box';
 export { Dropdown } from './components/dropdown';
-export { MemorizedPopupMenu as PopupMenu } from './components/popup-menu';
+export { PopupMenu } from './components/popup-menu';
 export { Modal } from './components/modal';
 export { default as VirtualizedList } from './components/virtualized-list';
 export { default as TextInput } from './components/text-input';

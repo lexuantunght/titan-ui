@@ -1,34 +1,35 @@
 import React from 'react';
 import clsx from 'clsx';
 import { PopupMenu as Popup } from './popup';
-import { PopupMenuProps, PopupContextMenuRef, PopupMenuItem } from './types';
+import { PopupMenuProps, PopupMenuItem } from './types';
 import ItemPopupRenderer from './item-popup-renderer';
 
-const PopupMenu = (props: PopupMenuProps, ref: React.Ref<PopupContextMenuRef>) => {
-	const { items, onHide, className } = props;
-	const popupRef = React.useRef<Popup | null>(null);
+export class PopupMenu extends React.PureComponent<PopupMenuProps> {
+	private popupRef;
+	constructor(props: PopupMenuProps) {
+		super(props);
+		this.popupRef = React.createRef<Popup>();
+	}
 
-	React.useImperativeHandle(
-		ref,
-		() => ({
-			toggle: (e) => {
-				popupRef.current?.toggle(e);
-			},
-		}),
-		[]
-	);
+	toggle(e: React.MouseEvent<HTMLDivElement, MouseEvent>) {
+		this.popupRef.current?.toggle(e);
+	}
 
-	const renderItemFn = (items: PopupMenuItem[]) => {
+	renderItemFn(items: PopupMenuItem[]) {
 		return items.map((item, key) => (
-			<ItemPopupRenderer key={key} item={item} renderItemFn={renderItemFn} />
+			<ItemPopupRenderer key={key} item={item} renderItemFn={this.renderItemFn} />
 		));
-	};
+	}
 
-	return (
-		<Popup className={clsx('t-popup-menu-container', className)} onHide={onHide} ref={popupRef}>
-			{renderItemFn(items)}
-		</Popup>
-	);
-};
-
-export const MemorizedPopupMenu = React.memo(React.forwardRef(PopupMenu));
+	render() {
+		const { items, onHide, className } = this.props;
+		return (
+			<Popup
+				className={clsx('t-popup-menu-container', className)}
+				onHide={onHide}
+				ref={this.popupRef}>
+				{this.renderItemFn(items)}
+			</Popup>
+		);
+	}
+}
