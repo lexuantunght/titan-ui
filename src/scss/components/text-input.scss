@@ -13,6 +13,11 @@
 		border-radius: var(--border-radius);
 	}
 
+	&.fill {
+		background-color: var(--light);
+		color: var(--neutral-800);
+	}
+
 	&-wrapper {
 		display: flex;
 		align-items: center;
@@ -56,6 +61,10 @@
 			&:hover:not(:disabled) {
 				border-color: var(--opacity-hover);
 			}
+		}
+		&.fill {
+			background-color: var(--light);
+			color: var(--neutral-800);
 		}
 	}
 
