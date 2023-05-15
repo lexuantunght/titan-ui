@@ -112,6 +112,8 @@ function Tooltip(props: TooltipProps) {
 			});
 			childRef.current.addEventListener('mouseenter', handleHover);
 			childRef.current.addEventListener('mouseleave', handleUnhover);
+		} else if (hide) {
+			setShow(false);
 		}
 		return () => {
 			if (childRef.current) {

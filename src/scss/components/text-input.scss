@@ -16,7 +16,6 @@
 	&-wrapper {
 		display: flex;
 		align-items: center;
-		width: fit-content;
 	}
 
 	&.outline,
@@ -56,6 +55,16 @@
 			&:hover:not(:disabled) {
 				border-color: var(--opacity-hover);
 			}
+		}
+		&.fill {
+			background-color: var(--light);
+			.t-text-input-icon,
+			.t-text-input {
+				color: var(--neutral-800);
+			}
+		}
+		.t-text-input {
+			flex-grow: 1;
 		}
 	}
 

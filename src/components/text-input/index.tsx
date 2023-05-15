@@ -4,10 +4,11 @@ import withForwardRef from 'utils/hocs/with-forward-ref';
 import withValidation from 'utils/hocs/with-validation';
 
 export interface TextInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
-	mode?: 'outline' | 'normal';
+	mode?: 'outline' | 'normal' | 'fill';
 	varriant?: 'primary' | 'light' | 'error' | 'warning' | 'secondary' | 'opacity';
 	icon?: React.ReactNode;
 	innerRef?: React.LegacyRef<HTMLInputElement>;
+	wrapperClassName?: string;
 }
 
 class TextInput extends React.PureComponent<TextInputProps> {
@@ -18,6 +19,7 @@ class TextInput extends React.PureComponent<TextInputProps> {
 			varriant = 'secondary',
 			icon,
 			innerRef,
+			wrapperClassName,
 			...others
 		} = this.props;
 
@@ -27,7 +29,9 @@ class TextInput extends React.PureComponent<TextInputProps> {
 					className={clsx(
 						't-text-input-wrapper',
 						this.props.disabled && 'disabled',
-						varriant
+						mode === 'fill' && 'fill',
+						varriant,
+						wrapperClassName
 					)}>
 					{typeof icon === 'string' ? (
 						<i className={clsx('t-text-input-icon t-icon', icon)} />

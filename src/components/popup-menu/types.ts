@@ -26,23 +26,22 @@ export type PopupMenuContentProps = PopupProps & {
 };
 
 export type PopupMenuItem = {
-	element: string | JSX.Element | null;
+	element?: React.ReactNode;
 	onclick?: (e: React.MouseEvent<HTMLElement, MouseEvent>) => void;
 	checked?: boolean;
 	disabled?: boolean;
 	divider?: 'top' | 'bottom' | 'none';
 	leftIcon?: JSX.Element;
+	className?: string;
 	items?: PopupMenuItem[];
+	popupClassName?: string;
 };
 
-export type PopupMenuProps = {
-	items: PopupMenuItem[];
+export type PopupMenuProps = PopupProps & {
+	items?: PopupMenuItem[];
 	onHide?: () => void;
 	className?: string;
-};
-
-export type PopupContextMenuRef = {
-	toggle: (e: React.MouseEvent<HTMLElement, MouseEvent>) => void;
+	children?: React.ReactNode;
 };
 
 export type PopupPosition = {
@@ -52,5 +51,5 @@ export type PopupPosition = {
 
 export type ItemPopupRendererProps = {
 	item: PopupMenuItem;
-	renderItemFn: (items: PopupMenuItem[]) => JSX.Element[];
+	renderItemFn: (items: PopupMenuItem[]) => JSX.Element[] | null | undefined;
 };

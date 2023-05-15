@@ -24,6 +24,7 @@ const Slider = (props: SliderProps) => {
 	const controlRef = React.useRef<HTMLDivElement>(null);
 	const sliderRef = React.useRef<HTMLDivElement>(null);
 	const tooltipRef = React.useRef<HTMLDivElement>(null);
+	const shouldHideAfterHold = React.useRef(false);
 	const perRef = React.useRef(defaultValue / total);
 	const holdRef = React.useRef(false);
 
@@ -51,6 +52,10 @@ const Slider = (props: SliderProps) => {
 
 	const onMouseUp = () => {
 		holdRef.current = false;
+		if (shouldHideAfterHold.current) {
+			sliderRef.current?.classList.remove('show');
+			shouldHideAfterHold.current = false;
+		}
 		cleanupEvent();
 	};
 
@@ -71,6 +76,23 @@ const Slider = (props: SliderProps) => {
 		}
 	};
 
+	const onHover = () => {
+		if (sliderRef.current) {
+			sliderRef.current.classList.add('show');
+			shouldHideAfterHold.current = false;
+		}
+	};
+
+	const onUnHover = () => {
+		if (sliderRef.current) {
+			if (holdRef.current) {
+				shouldHideAfterHold.current = true;
+				return;
+			}
+			sliderRef.current.classList.remove('show');
+		}
+	};
+
 	const cleanupEvent = () => {
 		window.removeEventListener('mousemove', onMouseMove);
 		window.removeEventListener('mouseup', onMouseUp);
@@ -85,13 +107,10 @@ const Slider = (props: SliderProps) => {
 	return (
 		<div
 			onMouseDown={onMouseDown}
+			onMouseEnter={onHover}
+			onMouseLeave={onUnHover}
 			ref={sliderRef}
-			className={clsx(
-				't-slider',
-				disabled && 'disabled',
-				autoHide && 'auto-hide',
-				className
-			)}>
+			className={clsx('t-slider', disabled && 'disabled', !autoHide && 'show', className)}>
 			<div
 				ref={controlRef}
 				style={{ width: `${(defaultValue / total) * 100}%` }}

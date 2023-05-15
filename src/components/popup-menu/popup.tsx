@@ -72,6 +72,7 @@ const PopupMenuContent = (props: PopupMenuContentProps) => {
 			top,
 			left,
 		});
+		props.onShow?.(top, left);
 	}, [centerHorizontal, centerVertical, props.offset, target]);
 
 	return ReactDOM.createPortal(
@@ -133,11 +134,18 @@ export class PopupMenu extends React.Component<PopupMenuProps, PopupMenuState> {
 		return (
 			<CSSTransition in={this.state.activeMenu} timeout={250} unmountOnExit>
 				<PopupMenuContent
-					{...this.props}
 					show={this.state.activeMenu}
 					target={this.state.target}
 					handleClose={this.handleClose}
-				/>
+					centerHorizontal={this.props.centerHorizontal}
+					centerVertical={this.props.centerVertical}
+					keepShowOnClick={this.props.keepShowOnClick}
+					offset={this.props.offset}
+					onHide={this.props.onHide}
+					onShow={this.props.onShow}
+					className={this.props.className}>
+					{this.props.children}
+				</PopupMenuContent>
 			</CSSTransition>
 		);
 	}

@@ -17,16 +17,16 @@ const ItemPopupRenderer = ({ item, renderItemFn }: ItemPopupRendererProps) => {
 				onClick={item.disabled ? undefined : item.onclick}
 				onMouseEnter={toggleSubMenu}
 				onMouseLeave={toggleSubMenu}
-				className={clsx('t-popup-menu-item', item.disabled && 'disabled')}>
+				className={clsx('t-popup-menu-item', item.disabled && 'disabled', item.className)}>
 				{item.leftIcon}
 				{item.element}
-				{item.checked && <i className="t-icon icon-check-fill" />}
+				{item.checked && <i className="t-icon icon-check-fill t-popup-menu-item-check" />}
 				{item.items?.length && (
 					<>
 						<i className="t-icon icon-right-arrow" />
 						<Popup
 							offset={-5}
-							className={clsx('t-popup-menu-container')}
+							className={clsx('t-popup-menu-container', item.popupClassName)}
 							ref={subPopupRef}>
 							{renderItemFn(item.items)}
 						</Popup>

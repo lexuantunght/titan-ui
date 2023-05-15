@@ -4,7 +4,7 @@
         "lib": ["dom", "dom.iterable", "esnext"],
         "allowJs": true,
         "checkJs": false,
-        "rootDirs": ["src", "example"],
+        "rootDirs": ["src"],
         "skipLibCheck": true,
         "strict": true,
         "forceConsistentCasingInFileNames": true,
@@ -18,7 +18,9 @@
         "incremental": true,
         "outDir": "./lib",
         "declaration": true,
-        "plugins": [{ "transform": "typescript-transform-paths" }],
+        "plugins": [
+            { "transform": "typescript-transform-paths", "exclude": ["**/node_modules/**"] },
+        ],
         "baseUrl": ".",
         "paths": {
             "*": ["src/*"]
