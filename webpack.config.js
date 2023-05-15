@@ -4,7 +4,6 @@ const TerserWebpackPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const CircularDependencyPlugin = require('circular-dependency-plugin');
-const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const { DefinePlugin } = require('webpack');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
@@ -29,7 +28,7 @@ module.exports = {
 	mode: process.env.NODE_ENV || 'development',
 	resolve: {
 		extensions: ['.tsx', '.ts', '.js'],
-		plugins: [new TsconfigPathsPlugin()],
+		modules: [path.resolve(__dirname, 'src'), 'node_modules'],
 	},
 	devServer: {
 		historyApiFallback: {

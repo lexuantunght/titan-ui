@@ -27,7 +27,16 @@ const DemoButton = () => {
 			</div>
 			<PopupMenu
 				ref={ref}
-				items={[{ element: 'Hello' }, { element: 'hahaha', items: [{ element: 'Test' }] }]}
+				items={[
+					{
+						element: (
+							<Tooltip content="show tooltip">
+								<span>Hello</span>
+							</Tooltip>
+						),
+					},
+					{ element: 'hahaha', items: [{ element: 'Test' }] },
+				]}
 			/>
 		</>
 	);

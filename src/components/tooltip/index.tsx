@@ -35,8 +35,8 @@ const TooltipContent = (
 
 	React.useEffect(() => {
 		if (contentRef.current && childrenInfo) {
-			const x = childrenInfo.left + window.scrollX;
-			const y = childrenInfo.top + window.scrollY;
+			const x = childrenInfo.left;
+			const y = childrenInfo.top;
 			const childrenHeight = childrenInfo.height;
 			const childrenWidth = childrenInfo.width;
 			const contentWidth = contentRef.current.clientWidth;
@@ -104,12 +104,6 @@ function Tooltip(props: TooltipProps) {
 
 	React.useEffect(() => {
 		if (childRef.current && !hide) {
-			setChildrenInfo({
-				width: childRef.current.clientWidth,
-				height: childRef.current.clientHeight,
-				left: childRef.current.getBoundingClientRect().left + window.scrollX,
-				top: childRef.current.getBoundingClientRect().top + window.scrollY,
-			});
 			childRef.current.addEventListener('mouseenter', handleHover);
 			childRef.current.addEventListener('mouseleave', handleUnhover);
 		} else if (hide) {
@@ -128,7 +122,15 @@ function Tooltip(props: TooltipProps) {
 	};
 
 	const handleHover = () => {
-		setShow(true);
+		if (childRef.current) {
+			setShow(true);
+			setChildrenInfo({
+				width: childRef.current.clientWidth,
+				height: childRef.current.clientHeight,
+				left: childRef.current.getBoundingClientRect().left + window.scrollX,
+				top: childRef.current.getBoundingClientRect().top + window.scrollY,
+			});
+		}
 	};
 
 	return (
