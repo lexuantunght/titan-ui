@@ -13,6 +13,7 @@
 	--opacity-hover: #2f313180;
 
 	--text-color: var(--neutral-800);
+	--scroll-color: var(--neutral-200);
 
 	--border-radius: 8px;
 	--padding-x: 0.7rem;
@@ -23,4 +24,5 @@
 
 [data-theme='dark'] {
 	--text-color: #ffffff;
+	--scroll-color: var(--neutral-600);
 }

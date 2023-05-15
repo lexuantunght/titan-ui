@@ -11,12 +11,12 @@ export type ScrollBoxProps = {
 };
 
 const ScrollBox = (props: ScrollBoxProps) => {
-	const { autoHide, className, style } = props;
+	const { autoHide, className, style = { height: '100%' } } = props;
 	return (
 		<Scrollbars
 			autoHide={autoHide}
 			className={className}
-			style={{ style }}
+			style={style}
 			renderTrackVertical={({ style, ...props }) => (
 				<div
 					{...props}
@@ -28,7 +28,7 @@ const ScrollBox = (props: ScrollBoxProps) => {
 					{...props}
 					style={{
 						...style,
-						backgroundColor: 'var(--neutral-200)',
+						backgroundColor: 'var(--scroll-color)',
 						borderRadius: 3,
 					}}
 				/>
